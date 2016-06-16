@@ -24,9 +24,5 @@
 
 <!-- TMail specific javascripts -->
 
-<!-- Google Maps -->
-<script src="//maps.googleapis.com/maps/api/js"></script>
-<script>initmap()</script>
-
 </body>
 </html>
