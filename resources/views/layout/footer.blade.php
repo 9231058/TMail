@@ -1,18 +1,22 @@
-<footer>
-	<br>
-	<p>
-	Computer and Information Technology Department,
-	Amirkabir University - Published under GPL2 License -
-	</p>
-	<a href="https://github.com/1995parham/TMail" target="_blank">Available on Github</a>
-	<a href="https://github.com/1995parham" target="_blank">@1995parham</a>
+<footer class="navbar navbar-inverse navbar-fixed-bottom">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav">
+			<li><a href="https://github.com/1995parham/TMail" target="_blank">Available on Github</a></li>
+		</ul>
+		<p class="navbar-text navbar-right">
+		From <a class="navbar-link" href="https://github.com/1995parham/">@1995parham</a> with love :)
+		</p>
+	</div>
 </footer>
 
 <!-- jQuery -->
-<script src="{{asset('js/jquery.js')}}"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous">
+</script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <!-- TMail specific javascripts -->
 <!-- Pages specific javascripts -->
