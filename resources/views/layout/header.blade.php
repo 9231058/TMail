@@ -11,7 +11,7 @@
 	<?php echo " - $title" ?>
 </title>
 
-<link rel="stylesheet" href="{{asset('css/style.css')}}" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/darkly/bootstrap.min.css" type="text/css">
 
 </head>
 <body>
