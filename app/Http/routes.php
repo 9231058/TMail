@@ -15,3 +15,5 @@ Route::get('/', function () {
 	return view('index', ['js' => 'index.js',
 		'title' => 'Login']);
 });
+
+Route::post('auth/login', 'Auth\AuthController@postLogin')->name("login");
