@@ -35,30 +35,4 @@
 		</form>
 	</div>
 </div>
-
-<script type="text/javascript" src="./jquery-1.12.0.js"></script>
-<script>
-$(document).ready( function (){
-	$.post("../server.php", { login: "user"} , function(data)
-	       {
-		       console.log(data);
-		       if(data==1){
-			       var url="../html/inbox.html?"+ getCookie("username");
-			       alert(url);
-			       setTimeout(function(){ window.location = url; }, 1000);
-		       }
-	       });
-}
-		 );
-		 function getCookie(cname) {
-			 var name = cname + "=";
-			 var ca = document.cookie.split(';');
-			 for(var i=0; i<ca.length; i++) {
-				 var c = ca[i];
-				 while (c.charAt(0)==' ') c = c.substring(1);
-				 if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-			 }
-			 return "";
-		 }
-</script>
 @endsection
