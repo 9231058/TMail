@@ -1,6 +1,9 @@
 @extends('layout.app')
 @section('content')
 	<div class="container">
+	<div class="page-header">
+		<h1>TMail <small>Simple way to destroy your mails :D</small></h1>
+	</div>
 	<form id="signup">
 		<div class="titles">
 			<h5>First Name :</h5>
@@ -18,7 +21,8 @@
 			<input type="file" name="image">
 		</div>
 	</form>
-	<form id="login">
+	<form action="<?php echo route('login'); ?>" method="post">
+		{!! csrf_field() !!}
 		<div class="form-group">
 			<label for="email">Email address</label>
 			<input type="email" class="form-control" placeholder="Email" name="email">
