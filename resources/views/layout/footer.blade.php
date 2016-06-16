@@ -18,7 +18,7 @@
 <!-- Pages specific javascripts -->
 <?php
 if (isset($js))
-echo "<script src=\"{{asses('js/$js'}}\"></script>"
+echo '<script src="' . asset("js/$js") . '"></script>'
 ?>
 
 </body>
