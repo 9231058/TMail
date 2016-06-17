@@ -1,5 +1,5 @@
-<footer class="navbar navbar-inverse navbar-fixed-bottom">
-	<div class="container-fluid">
+<footer class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+	<div class="container">
 		<ul class="nav navbar-nav">
 			<li><a href="https://github.com/1995parham/TMail" target="_blank">Available on Github</a></li>
 		</ul>
