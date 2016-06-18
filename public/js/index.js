@@ -7,24 +7,23 @@
  * | File Name:     index.js
  * +===============================================
  */
-document.ready = function () {
-  $.post('', {login: 'user'}, function (data) {
-    console.log(data)
-    if (data === 1) {
-      var url = '../html/inbox.html?' + getCookie('username')
-      alert(url)
-      setTimeout(function () { window.location = url }, 1000)
-    }
-  })
-}
+window.onload = onIndexLoad()
 
-function getCookie (cname) {
-  var name = cname + '='
-  var ca = document.cookie.split(';')
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i]
-    while (c.charAt(0) === ' ') c = c.substring(1)
-    if (c.indexOf(name) === 0) return c.substring(name.length, c.length)
+function onIndexLoad () {
+  var register = document.getElementById('register')
+  var login = document.getElementById('login')
+  var swapBtn = document.getElementById('register-btn')
+
+  register.style.display = 'none'
+  swapBtn.onclick = function () {
+    if (register.style.display !== 'none') {
+      register.style.display = 'none'
+      login.style.display = 'block'
+      swapBtn.innerHTML = 'Register New Account'
+    } else {
+      register.style.display = 'block'
+      login.style.display = 'none'
+      swapBtn.innerHTML = 'Already have account ? Login !'
+    }
   }
-  return ''
 }
