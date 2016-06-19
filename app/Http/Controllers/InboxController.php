@@ -12,6 +12,8 @@
  */
 namespace App\Http\Controllers;
 
+use Auth;
+
 class InboxController extends Controller
 {
     /**
