@@ -17,3 +17,5 @@ Route::get('/', function () {
 });
 
 Route::post('auth/login', 'Auth\AuthController@postLogin')->name("login");
+
+Route::get('/inbox', 'InboxController@showInbox');
