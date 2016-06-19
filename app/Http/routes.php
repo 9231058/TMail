@@ -11,11 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-	return view('index', ['js' => 'index.js',
-		'title' => 'Login']);
-});
+Route::get(
+    '/', function () {
+        return view(
+            'index', ['js' => 'index.js',
+            'title' => 'Login']
+        );
+    }
+)->name('index');
 
-Route::post('auth/login', 'Auth\AuthController@postLogin')->name("login");
+Route::post('auth/login', 'Auth\AuthController@postLogin')->name('login');
 
-Route::get('/inbox', 'InboxController@showInbox');
+Route::get('/inbox', 'InboxController@showInbox')->name('inbox');
