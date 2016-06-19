@@ -24,9 +24,6 @@ class InboxController extends Controller
     public function showInbox()
     {
         $user = Auth::user();
-        if ($user == null) {
-            return redirect()->route('index');
-        }
         return view('inbox');
     }
 }
