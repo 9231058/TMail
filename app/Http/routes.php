@@ -12,17 +12,16 @@
 */
 
 Route::get(
-    '/', function () {
+    '/',
+    function () {
         return view(
-            'index', ['js' => 'index.js',
+            'index',
+            ['js' => 'index.js',
             'title' => 'Login']
         );
     }
 )->name('index');
 
-Route::post('auth/login', 'Auth\AuthController@postLogin')->name('login');
+Route::get('/inbox', 'InboxController@showInbox')->name('inbox');
 
-Route::get(
-    '/inbox', ['middleware' => 'auth',
-    'uses' => 'InboxController@showInbox']
-)->name('inbox');
+Route::auth();
