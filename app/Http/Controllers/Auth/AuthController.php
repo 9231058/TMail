@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace TMail\Http\Controllers\Auth;
 
-use App\User;
+use TMail\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use TMail\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

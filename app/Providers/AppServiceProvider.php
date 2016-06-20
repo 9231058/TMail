@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace TMail\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

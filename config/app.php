@@ -153,10 +153,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        TMail\Providers\AppServiceProvider::class,
+        TMail\Providers\AuthServiceProvider::class,
+        TMail\Providers\EventServiceProvider::class,
+        TMail\Providers\RouteServiceProvider::class,
 
     ],
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace TMail;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'fistName', 'lastName', 'email', 'password',
     ];
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace TMail\Events;
 
 abstract class Event
 {
