@@ -2,6 +2,18 @@
 ## Introduction
 This is a simple web server for fetching email and showing them
 based on PHP and some JavaScript.
+
+## How...
+### Postgres
+For creating specific use in postgres sql for TMail:
+```sql
+CREATE USER TMail WITH PASSWORD '1234';
+```
+and run above query with following command
+```sh
+sudo -s postgres psql -f file.sql
+```
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
