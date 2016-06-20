@@ -7,7 +7,7 @@
 <meta name="description" content="TMail PHP server">
 
 <title>
-	TMail {{ $title or '' }}
+	TMail @yield('title')
 </title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/darkly/bootstrap.min.css" type="text/css">

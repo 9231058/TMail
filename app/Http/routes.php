@@ -16,8 +16,7 @@ Route::get(
     function () {
         return view(
             'index',
-            ['js' => 'index.js',
-            'title' => 'Login']
+            ['js' => 'index.js']
         );
     }
 )->name('index');
