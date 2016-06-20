@@ -21,8 +21,9 @@
 <!-- TMail specific javascripts -->
 <!-- Pages specific javascripts -->
 <?php
-if (isset($js))
-echo '<script src="' . asset("js/$js") . '"></script>'
+if (isset($js)) {
+    echo '<script src="' . asset("js/$js") . '"></script>'
+}
 ?>
 
 </body>
