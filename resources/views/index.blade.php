@@ -8,12 +8,12 @@
 		<div class="panel-body">
 			<form id="register" method="post">
 				<div class="form-group">
-					<label for="firstname">First Name</label>
-					<input type="text" class="form-control" placeholder="First Name" name="firstname">
+					<label for="first_name">First Name</label>
+					<input type="text" class="form-control" placeholder="First Name" name="first_name">
 				</div>
 				<div class="form-group">
-					<label for="lastname">Last Name</label>
-					<input type="text" class="form-control" placeholder="Last Name" name="lastname">
+					<label for="last_name">Last Name</label>
+					<input type="text" class="form-control" placeholder="Last Name" name="last_name">
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
