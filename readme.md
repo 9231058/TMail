@@ -8,6 +8,8 @@ based on PHP and some JavaScript.
 For creating specific use in postgres sql for TMail:
 ```sql
 CREATE USER TMail WITH PASSWORD '1234';
+CREATE DATABASE TMail;
+GRANT ALL PRIVILEGES ON DATABASE TMail TO TMail;
 ```
 and run above query with following command
 ```sh
