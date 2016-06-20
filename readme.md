@@ -4,7 +4,8 @@ This is a simple web server for fetching email and showing them
 based on PHP and some JavaScript.
 
 ## How...
-### Postgres
+### Postgres [pgsql]
+Before anything you need `php-pgsql` package installed.
 For creating specific use in postgres sql for TMail:
 ```sql
 CREATE USER TMail WITH PASSWORD '1234';
