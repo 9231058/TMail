@@ -32,23 +32,7 @@
                 </div>
                 <button type="submit" class="btn btn-default" name="Register">Register</button>
             </form>
-            <form id="login" action="{{ url('/login') }}" method="post">
-                {!! csrf_field() !!}
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" placeholder="Email" name="email">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" placeholder="Password" name="password">
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" id="checkremember">Remember me
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-default" name="Login">Login</button>
-            </form>
+            @include('forms.login')
             <p class="text-center">
             <a id="register-btn">Register New Account</a>
             </p>
