@@ -19,7 +19,7 @@
 </div>
 <div class="checkbox">
     <label>
-        <input type="checkbox" id="checkremember">Remember me
+        <input type="checkbox" id="remember">Remember me
     </label>
 </div>
 <button type="submit" class="btn btn-default" name="Login">Login</button>
