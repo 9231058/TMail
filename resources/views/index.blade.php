@@ -7,8 +7,12 @@
     </div>
     <div class="panel panel-default">
         <div class="panel-body">
-            @include('forms.register')
-            @include('forms.login')
+            {!! Form::open(['url' => url('/register'), 'id' => 'register']) !!}
+                @include('partials.forms.register')
+            {!! Form::close() !!}
+            {!! Form::open(['url' => url('/login'), 'id' => 'login']) !!}
+                @include('partials.forms.login')
+            {!! Form::close() !!}
             <p class="text-center">
             <a id="register-btn">Register New Account</a>
             </p>
