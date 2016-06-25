@@ -26,9 +26,12 @@
     {!! Form::label('password', 'Password') !!}
     {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
 </div>
-<div>
+<div class="form-group">
     {!! Form::label('password_confirmation', 'RePassword') !!}
     {!! Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => 'RePassword']) !!}
+</div>
+<div class="form-group">
+    {!! app('captcha')->display(); !!}
 </div>
 <div class="form-group">
     <label for="image">Profile Picture</label>
