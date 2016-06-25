@@ -1,3 +1,4 @@
+{!! Form::open(['url' => 'login', 'id' => 'login']) !!}
 @if (count($errors))
     <div class="alert alert-danger alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -9,7 +10,6 @@
     </ul>
 </div>
 @endif
-{!! Form::open(['url' => 'login', 'id' => 'login']) !!}
 <div class="form-group">
     {!! Form::label('email', 'Email Address') !!}
     {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
