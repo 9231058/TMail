@@ -1,5 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Inbox')
+@section('title')
+    Inbox
+    ({{ Auth::user()->email }})
+@endsection
 @section('content')
     <div class="container">
     <div class="page-header">
