@@ -9,7 +9,7 @@
     </div>
     <div class="panel panel-default">
         <div class="panel-body">
-            {!! Form::open(['url' => 'login']) !!}
+            {!! Form::open(['url' => url('/login')]) !!}
             @include('partials.forms.login')
             {!! Form::close() !!}
         </div>
