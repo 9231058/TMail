@@ -27,8 +27,8 @@
     {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
 </div>
 <div>
-    {!! Form::label('password_conf', 'RePassword') !!}
-    {!! Form::password('password_conf', ['class' => 'form-control', 'placeholder' => 'RePassword']) !!}
+    {!! Form::label('password_confirmation', 'RePassword') !!}
+    {!! Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => 'RePassword']) !!}
 </div>
 <div class="form-group">
     <label for="image">Profile Picture</label>
