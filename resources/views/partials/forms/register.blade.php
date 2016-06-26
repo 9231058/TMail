@@ -31,7 +31,7 @@
     {!! Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => 'RePassword']) !!}
 </div>
 <div class="form-group">
-    {!! app('captcha')->display(); !!}
+    {!! Recaptcha::render() !!}
 </div>
 <div class="form-group">
     <label for="image">Profile Picture</label>
