@@ -1,12 +1,22 @@
 @extends('layouts.app')
 @section('title')
     Inbox
-    ({{ Auth::user()->email }})
+({{ Auth::user()->email }})
 @endsection
 @section('content')
     <div class="container">
     <div class="page-header">
         <h1>TMail <small>Simple way to destroy your mails :D</small></h1>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <h2>{{Auth::user()->first_name}} {{Auth::user()->last_name}}</h2>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="..." alt="...">
+            </a>
+        </div>
     </div>
     <div class="row">
         <div class="col-sm-3 col-md-2">
@@ -89,35 +99,19 @@
             <!-- Tab panes -->
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="home">
+                    <!-- Inbox pane -->
                     <div class="list-group">
-                        <a href="#" class="list-group-item">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox">
-                                </label>
-                            </div>
-                            <span class="glyphicon glyphicon-star-empty"></span><span class="name" style="min-width: 120px;
-                                display: inline-block;">Mark Otto</span> <span class="">Nice work on the lastest version</span>
-                            <span class="text-muted" style="font-size: 11px;">- More content here</span> <span class="badge">12:10 AM</span> <span class="pull-right"><span class="glyphicon glyphicon-paperclip">
-                        </span></span></a><a href="#" class="list-group-item">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox">
-                                </label>
-                            </div>
-                            <span class="glyphicon glyphicon-star-empty"></span><span class="name" style="min-width: 120px;
-                                display: inline-block;">Jason Markus</span> <span class="">This is big title</span>
-                            <span class="text-muted" style="font-size: 11px;">- I saw that you had..</span> <span class="badge">12:09 AM</span> <span class="pull-right"><span class="glyphicon glyphicon-paperclip">
-                        </span></span></a><a href="#" class="list-group-item read">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox">
-                                </label>
-                            </div>
-                            <span class="glyphicon glyphicon-star"></span><span class="name" style="min-width: 120px;
-                                display: inline-block;">Jane Patel</span> <span class="">This is big title</span>
-                            <span class="text-muted" style="font-size: 11px;">- Hi hello how r u ?</span> <span class="badge">11:30 PM</span> <span class="pull-right"><span class="glyphicon glyphicon-paperclip">
-                        </span></span></a>
+                        <a href="#" class="list-group-item" v-for="mail in mails">
+                            <label>
+                                <input type="checkbox">
+                            </label>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="name" style="min-width: 120px;display: inline-block;">@{{mail.author}}</span>
+                            <span class="">@{{mail.title}}</span>
+                            <span class="text-muted" style="font-size: 11px;">- @{{mail.head}}</span>
+                            <span class="badge">@{{mail.time}}</span>
+                            <span class="pull-right"><span v-show="mail.hasAttachment" class="glyphicon glyphicon-paperclip"></span></span>
+                        </a>
                     </div>
                 </div>
             </div>
