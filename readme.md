@@ -4,7 +4,7 @@ This is a simple web server for fetching email and showing them
 based on PHP and some JavaScript.
 
 ## How...
-### Postgres [pgsql]
+### PostgresDB [pgsql]
 Before anything you need `php-pgsql` package installed.
 For creating specific use in postgres sql for TMail:
 ```sql
@@ -15,6 +15,15 @@ GRANT ALL PRIVILEGES ON DATABASE TMail TO TMail;
 and run above query with following command
 ```sh
 sudo -s postgres psql -f file.sql
+```
+### MongoDB
+Read the mongoDB manual for laravel from [here](https://github.com/jenssegers/laravel-mongodb)
+after installation, use following commands
+for creating mongo db and user for our TMail
+application.
+```javascript
+use tmail
+db.createUser({user: "tmail", pwd: "1234", roles: [{role: "userAdmin", db: "tmail"}]})
 ```
 
 ## Laravel PHP Framework
