@@ -156,9 +156,11 @@ return [
         Collective\Html\HtmlServiceProvider::class,
 
         /*
-         * NoCaptcha Service Provider...
+         * Etcetera Service Provider...
          */
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+        Jenssegers\Mongodb\MongodbServiceProvider::class,
+        Jenssegers\Mongodb\Auth\PasswordResetServiceProvider::class,
 
         /*
          * Application Service Providers...
