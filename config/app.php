@@ -158,7 +158,7 @@ return [
         /*
          * Etcetera Service Provider...
          */
-        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         Jenssegers\Mongodb\MongodbServiceProvider::class,
         Jenssegers\Mongodb\Auth\PasswordResetServiceProvider::class,
 
@@ -217,6 +217,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],
 
 ];

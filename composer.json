@@ -8,7 +8,7 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
 	"laravelcollective/html": "~5.0",
-	"anhskohbo/no-captcha": "2.*",
+	"greggilbert/recaptcha": "dev-master",
         "jenssegers/mongodb": "^3.0"
     },
     "require-dev": {
