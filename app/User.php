@@ -10,6 +10,21 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Jenssegers\Mongodb\Eloquent\Model as Model;
 
+/**
+ * User
+ * The User Model
+ *
+ * @property integer $id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ *
+ * @property string first_name
+ * @property string last_name
+ * @property string email
+ * @property string password
+ *
+ */
+
 class User extends Model implements
     AuthenticatableContract,
     AuthorizableContract,
