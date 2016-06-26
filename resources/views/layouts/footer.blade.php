@@ -23,10 +23,9 @@
 
 <!-- TMail specific javascripts -->
 <!-- Pages specific javascripts -->
-<?php
-if (isset($js))
-    echo '<script src="' . asset("js/$js") . '"></script>'
-?>
+@hasSection('js')
+<script src=@yield('js')></script>
+@endif
 
 </body>
 </html>

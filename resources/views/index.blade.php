@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Login')
+@section('js')
+    "{{asset('js/index.js')}}"
+@endsection
 @section('content')
     <div class="container">
     <div class="page-header">
