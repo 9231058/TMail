@@ -18,6 +18,9 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+<!-- Vue.js Thanks to Pooya -->
+<script src="https://cdn.jsdelivr.net/vue/1.0.25/vue.min.js"></script>
+
 <!-- TMail specific javascripts -->
 <!-- Pages specific javascripts -->
 <?php
