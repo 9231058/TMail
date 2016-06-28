@@ -14,7 +14,7 @@
         </div>
         <div class="col-xs-6 col-md-3">
             <a href="#" class="thumbnail">
-                <img src="..." alt="...">
+                <img src="{{Auth::user()->avatar}}" alt="Profile Picture">
             </a>
         </div>
     </div>
