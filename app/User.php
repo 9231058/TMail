@@ -49,13 +49,16 @@ class User extends Model implements
         'password', 'remember_token',
     ];
 
-    /*
+    /**
      * The avatar attribute of user
+     *
+     * @param string $value
+     * @return string
      */
-    public function getAvatarAttribute($attr)
+    public function getAvatarAttribute($value)
     {
-        if ($attr) {
-            return $attr;
+        if ($value) {
+            return $value;
         } else {
             return '//www.gravatar.com/avatar/' . md5($this->email).'?d=retro';
         }
