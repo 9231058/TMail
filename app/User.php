@@ -22,6 +22,7 @@ use Jenssegers\Mongodb\Eloquent\Model as Model;
  * @property string last_name
  * @property string email
  * @property string password
+ * @property string avatar
  *
  */
 
