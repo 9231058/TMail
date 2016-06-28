@@ -3,6 +3,9 @@
     Inbox
 ({{ Auth::user()->email }})
 @endsection
+@section('js')
+    "{{asset('js/inbox.js')}}"
+@endsection
 @section('content')
     <div class="container">
     <div class="page-header">
