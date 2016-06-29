@@ -10,7 +10,7 @@
     </div>
     <div class="panel panel-default">
         <div class="panel-body">
-            {!! Form::open(['url' => url('/register'), 'id' => 'register']) !!}
+            {!! Form::open(['url' => url('/register'), 'id' => 'register', 'files' => true]) !!}
                 @include('partials.forms.register')
             {!! Form::close() !!}
             {!! Form::open(['url' => url('/login'), 'id' => 'login']) !!}
