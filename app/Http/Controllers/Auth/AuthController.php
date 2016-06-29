@@ -56,7 +56,9 @@ class AuthController extends Controller
             'last_name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'g-recaptcha-response' => 'required|recaptcha',
+            //'g-recaptcha-response' => 'required|recaptcha',
+            'g-recaptcha-response' => 'required',
+            'avatar' => 'image',
             ]
         );
     }
@@ -70,12 +72,19 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        if (isset($data['avatar'])) {
+            $f = $data['avatar'];
+            $e = $f->getClientOriginalExtension();
+            $f->move(storage_path('app/public/avatars'), md5($data['email']).'.'.$e);
+            $avatar = asset('storage/avatars/'.md5($data['email']).'.'.$e);
+        }
         return User::create(
             [
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'avatar' => $avatar,
             ]
         );
     }
