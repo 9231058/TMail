@@ -25,7 +25,19 @@ application.
 use tmail
 db.createUser({user: "tmail", pwd: "1234", roles: [{role: "userAdmin", db: "tmail"}]})
 ```
-
+### FileUpload
+For using file upload in laravel you can
+store your file in `/storage/app` but if you
+want to access it later you must store it in
+`/storage/app/public` and create symbolic link
+to it from `/public/`:
+```sh
+ln -s ../storage/app/public storage
+```
+```php
+$store = storage_path('app/public/...');
+$refrence = asset('storage/...');
+```
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
