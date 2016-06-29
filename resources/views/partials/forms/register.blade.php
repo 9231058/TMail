@@ -35,7 +35,7 @@
 </div>
 <div class="form-group">
     <label for="image">Profile Picture</label>
-    <input type="file" name="image">
+    <input type="file" name="avatar">
     <p class="help-block">Please upload jpg file</p>
 </div>
 <button type="submit" class="btn btn-default" name="Register">Register</button>
