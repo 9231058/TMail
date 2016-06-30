@@ -16,7 +16,7 @@
             <h2>{{Auth::user()->first_name}} {{Auth::user()->last_name}}</h2>
         </div>
         <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
+            <a href="{{url('users/'.Auth::user()->id)}}" class="thumbnail">
                 <img src="{{Auth::user()->avatar}}" alt="Profile Picture">
             </a>
         </div>
