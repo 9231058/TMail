@@ -17,7 +17,7 @@
             <img src="{{$user->avatar}}" alt="Profile Picture" class="img-thumbnail">
         </div>
     </div>
-    @if (Auth::check())
+    @if (Auth::check() && Auth::user()->id != $user->id)
     <div class="row" id="contact">
         <button type="button" class="btn btn-success" v-if="isContact">You are Friends</button>
         <button type="button" class="btn btn-default" v-else id="add-contact">Add to Contacts</button>
