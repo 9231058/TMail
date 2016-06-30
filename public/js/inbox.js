@@ -54,7 +54,7 @@ function sendMail () {
     data: form,
     dataType: 'json',
     success: function (msg) {
-      console.log(msg)
+      compose.hasError = false
     },
     error: function (msg) {
       compose.hasError = true
