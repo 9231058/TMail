@@ -44,7 +44,7 @@ class UserController extends Controller
         }
     }
 
-    public function addContact(User $user)
+    public function addContact(Request $request, User $user)
     {
         if (Auth::check() && Auth::user()->id != $user->id) {
             $add_contact = true;
