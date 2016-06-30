@@ -99,9 +99,9 @@
                             </label>
                             <span class="glyphicon glyphicon-star-empty"></span>
                             <span class="name" style="min-width: 120px;display: inline-block;">@{{mail.author}}</span>
-                            <span class="">@{{mail.title}}</span>
+                            <span>@{{mail.title}}</span>
                             <span class="text-muted" style="font-size: 11px;">- @{{mail.head}}</span>
-                            <span class="badge">@{{mail.time}}</span>
+                            <span class="badge">@{{mail.created_at}}</span>
                             <span class="pull-right"><span v-show="mail.hasAttachment" class="glyphicon glyphicon-paperclip"></span></span>
                         </a>
                     </div>
@@ -117,17 +117,22 @@
                     <h4 class="modal-title" id="compose-area">TMail at your service</h4>
                 </div>
                 <div class="modal-body">
-                    <form id='compose-form'>
-                        <div class="form-group">
-                            <input type="text" name="recipient" class="form-control" placeholder="Recipient" id="compose-recipient">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="title" class="form-control" placeholder="Title" id="compose-title">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3" id="compose-content"></textarea>
-                        </div>
-                    </form>
+                    <div class="alert alert-danger" role="alert" v-if="hasError">
+                        <ul>
+                            <li>Recipient: @{{errors.recipient}}</li>
+                            <li>Title: @{{errors.title}}</li>
+                            <li>Content: @{{errors.content}}</li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="recipient" class="form-control" placeholder="Recipient" id="compose-recipient">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="title" class="form-control" placeholder="Title" id="compose-title">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="content" class="form-control" rows="3" id="compose-content"></textarea>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
