@@ -8,7 +8,7 @@
 @section('content')
     <script>
         var userId = '{{$user->id}}'
-        var userURL = '{{url('users')}}'
+        var userURL = '{{url('user')}}'
     </script>
     <div class="container">
     <div class="page-header row">
@@ -36,7 +36,7 @@
                 <td>{{TMail\User::find($contact)->email}}</td>
                 <td>{{TMail\User::find($contact)->first_name}}</td>
                 <td>{{TMail\User::find($contact)->last_name}}</td>
-                <td><a href="{{ url('users/'.TMail\User::find($contact)->id) }}" class="btn btn-primary">Go !</a></td>
+                <td><a href="{{ url('user/'.TMail\User::find($contact)->id) }}" class="btn btn-primary">Go !</a></td>
             <tr>
         @endforeach
     </table>

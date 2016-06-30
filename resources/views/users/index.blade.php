@@ -18,7 +18,7 @@
                 <td>{{$user->email}}</td>
                 <td>{{$user->first_name}}</td>
                 <td>{{$user->last_name}}</td>
-                <td><a href="{{ url('users/'.$user->id) }}" class="btn btn-primary">Go !</a></td>
+                <td><a href="{{ url('user/'.$user->id) }}" class="btn btn-primary">Go !</a></td>
             <tr>
         @endforeach
     </table>
