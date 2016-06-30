@@ -12,17 +12,7 @@
         <h1>TMail <small>Simple way to destroy your mails :D</small></h1>
     </div>
     <div class="row">
-        <div class="col-md-3">
-            <h2>{{Auth::user()->first_name}} {{Auth::user()->last_name}}</h2>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <a href="{{url('users/'.Auth::user()->id)}}" class="thumbnail">
-                <img src="{{Auth::user()->avatar}}" alt="Profile Picture">
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3 col-md-2">
+        <div class="col-md-2">
             <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                     Mail <span class="caret"></span>
@@ -33,7 +23,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-sm-9 col-md-10">
+        <div class="col-md-10">
             <!-- Split button -->
             <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -77,7 +67,7 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-sm-3 col-md-2">
+        <div class="col-md-2">
             <a href="#" class="btn btn-danger btn-sm btn-block" role="button"><i class="glyphicon glyphicon-edit"></i> Compose</a>
             <hr>
             <ul class="nav nav-pills nav-stacked">
@@ -89,7 +79,7 @@
                 <li><a href="#"><span class="badge pull-right">3</span>Drafts</a></li>
             </ul>
         </div>
-        <div class="col-sm-9 col-md-10">
+        <div class="col-md-10">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
                 <li class="active">
