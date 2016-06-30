@@ -50,7 +50,7 @@ class MailController extends Controller
             ]);
             $mail->save();
 
-            response()->json($mail);
+            return response()->json($mail);
         }
     }
 }
