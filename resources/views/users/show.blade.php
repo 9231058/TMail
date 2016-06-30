@@ -18,9 +18,9 @@
         </div>
     </div>
     @if (Auth::check())
-    <div class="row">
-        <button type="button" class="btn btn-default" v-if="isContact">Add to Contacts</button>
-        <button type="button" class="btn btn-success" v-else>You are Friends</button>
+    <div class="row" id="contact">
+        <button type="button" class="btn btn-success" v-if="isContact">You are Friends</button>
+        <button type="button" class="btn btn-default" v-else id="add-contact">Add to Contacts</button>
     </div>
     @endif
 @endsection
