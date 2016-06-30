@@ -14,7 +14,11 @@
 Route::get(
     '/',
     function () {
-        return view('index');
+        if (Auth::check()) {
+            return redirect('inbox');
+        } else {
+            return view('index');
+        }
     }
 )->name('index');
 
