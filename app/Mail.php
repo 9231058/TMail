@@ -14,6 +14,7 @@ use Jenssegers\Mongodb\Eloquent\Model as Model;
  *
  * @property string $author
  * @property string $recipient
+ * @property string $title
  * @property \Carbon\DateTime $read_at
  *
  */
@@ -21,4 +22,6 @@ use Jenssegers\Mongodb\Eloquent\Model as Model;
 class Mail extends Model
 {
     protected $dates = ['read_at'];
+
+    protected $fillable = ['author', 'recipient', 'title'];
 }
