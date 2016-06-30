@@ -21,3 +21,5 @@ Route::get(
 Route::get('/inbox', 'InboxController@showInbox')->name('inbox');
 
 Route::auth();
+
+Route::get('users/{user}', 'UserController@show');
