@@ -68,15 +68,14 @@
     <hr>
     <div class="row">
         <div class="col-md-2">
-            <a href="#" class="btn btn-danger btn-sm btn-block" role="button"><i class="glyphicon glyphicon-edit"></i> Compose</a>
+            <button type="button" class="btn btn-danger btn-sm btn-block" data-toggle="modal" data-target="#compose">
+                <i class="glyphicon glyphicon-edit"></i> Compose
+            </button>
             <hr>
             <ul class="nav nav-pills nav-stacked">
                 <li class="active"><a href="#"><span class="badge pull-right">32</span> Inbox </a>
                 </li>
-                <li><a href="#">Starred</a></li>
-                <li><a href="#">Important</a></li>
                 <li><a href="#">Sent Mail</a></li>
-                <li><a href="#"><span class="badge pull-right">3</span>Drafts</a></li>
             </ul>
         </div>
         <div class="col-md-10">
@@ -106,6 +105,22 @@
                             <span class="pull-right"><span v-show="mail.hasAttachment" class="glyphicon glyphicon-paperclip"></span></span>
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="compose" tabindex="-1" role="dialog" aria-labelledby="compose-area">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="compose-area">TMail at your service</h4>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="compose-send">Send</button>
                 </div>
             </div>
         </div>
