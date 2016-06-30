@@ -117,6 +117,17 @@
                     <h4 class="modal-title" id="compose-area">TMail at your service</h4>
                 </div>
                 <div class="modal-body">
+                    <form id='compose-form'>
+                        <div class="form-group">
+                            <input type="text" name="recipient" class="form-control" placeholder="Recipient" id="compose-recipient">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control" placeholder="Title" id="compose-title">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" id="compose-content"></textarea>
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
