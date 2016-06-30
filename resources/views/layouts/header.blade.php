@@ -5,6 +5,7 @@
 
 <meta charset="utf-8">
 <meta name="description" content="TMail PHP server">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 <title>
     TMail @yield('title')
