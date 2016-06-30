@@ -18,4 +18,42 @@ class UserController extends Controller
     {
         return view('users.index')->with('users', User::all());
     }
+
+    public function isContact(User $user)
+    {
+        if (Auth::check()) {
+            $is_contact = false;
+            $base = Auth::user();
+            if (isset($base['contacts'])) {
+                if (array_search($user->id, $base->contacts) != false) {
+                    $is_contact = true;
+                }
+            }
+            return json(['isContact' => $is_contact]);
+        } else {
+            return json(['isContact' => false]);
+        }
+    }
+
+    public function addContact(User $user)
+    {
+        if (Auth::check()) {
+            $add_contact = true;
+            $base = Auth::user();
+            if (isset($base['contacts'])) {
+                if (array_search($user->id, $base->contacts) != false) {
+                    $add_contact = false;
+                } else {
+                    array_push($base->contacts, $user->id);
+                    $base->save();
+                }
+            } else {
+                $base->contacts = [$user->id];
+                $base->save;
+            }
+            return json(['isContact' => $is_contact]);
+        } else {
+            return json(['addContact' => false]);
+        }
+    }
 }
