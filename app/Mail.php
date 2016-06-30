@@ -14,11 +14,11 @@ use Jenssegers\Mongodb\Eloquent\Model as Model;
  *
  * @property string $author
  * @property string $recipient
- * @property \Carbon\DateTime $send_at
+ * @property \Carbon\DateTime $read_at
  *
  */
 
 class Mail extends Model
 {
-    protected $dates = ['sent_at'];
+    protected $dates = ['read_at'];
 }
