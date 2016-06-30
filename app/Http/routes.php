@@ -28,3 +28,5 @@ Route::auth();
 
 Route::get('users/{user}', 'UserController@show');
 Route::get('users', 'UserController@index');
+Route::get('users/contact/{user}', 'UserController@isContact');
+Route::post('users/contact/{user}', 'UserController@addContact');
