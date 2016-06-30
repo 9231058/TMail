@@ -23,6 +23,7 @@ use Jenssegers\Mongodb\Eloquent\Model as Model;
  * @property string email
  * @property string password
  * @property string avatar
+ * @property array contacts
  *
  */
 
