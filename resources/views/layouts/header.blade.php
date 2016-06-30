@@ -26,6 +26,10 @@
             </a>
         </div>
         <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li>{!! link_to('/inbox', 'Inbox') !!}</li>
+                <li>{!! link_to('/users', 'Users') !!}</li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>{!! link_to('/logout', 'Logout') !!}</li>
             </ul>
