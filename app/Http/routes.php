@@ -26,7 +26,7 @@ Route::get('/inbox', 'InboxController@showInbox')->name('inbox');
 
 Route::auth();
 
-Route::get('users/{user}', 'UserController@show');
-Route::get('users', 'UserController@index');
-Route::get('users/contact/{user}', 'UserController@isContact');
-Route::post('users/contact/{user}', 'UserController@addContact');
+Route::get('user/{user}', 'UserController@show');
+Route::get('user', 'UserController@index');
+Route::get('user/contact/{user}', 'UserController@isContact');
+Route::post('user/contact/{user}', 'UserController@addContact');
