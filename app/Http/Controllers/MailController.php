@@ -38,17 +38,19 @@ class MailController extends Controller
         if (Auth::check()) {
             $this->validate($request, [
                 'title' => 'required|max:255',
-                'recipient' => 'required|email|exists:users',
+                'recipient' => 'required|email|exists:users,email',
                 'content' => 'required',
             ]);
 
             $mail = Mail::create([
                 'title' => $request['title'],
-                'author' => Auth::user()->id,
+                'author' => Auth::user()->email,
                 'recipient' => $request['recipient'],
                 'content' => $request['contetn']
             ]);
-            $mail.save();
+            $mail->save();
+
+            response()->json($mail);
         }
     }
 }
