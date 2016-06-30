@@ -32,13 +32,11 @@ class UserController extends Controller
 
     public function isContact(User $user)
     {
-        if (Auth::check()) {
+        if (Auth::check() && Auth::user()->id != $user->id) {
             $is_contact = false;
             $base = Auth::user();
             if (isset($base['contacts'])) {
-                if (array_search($user->id, $base->contacts) != false) {
-                    $is_contact = true;
-                }
+                $is_contact = in_array($user->id, $base->contacts);
             }
             return response()->json(['isContact' => $is_contact]);
         } else {
@@ -48,11 +46,11 @@ class UserController extends Controller
 
     public function addContact(User $user)
     {
-        if (Auth::check()) {
+        if (Auth::check() && Auth::user()->id != $user->id) {
             $add_contact = true;
             $base = Auth::user();
             if (isset($base['contacts'])) {
-                if (array_search($user->id, $base->contacts) != false) {
+                if (array_search($user->id, $base->contacts)) {
                     $add_contact = false;
                 } else {
                     array_push($base->contacts, $user->id);
@@ -60,9 +58,9 @@ class UserController extends Controller
                 }
             } else {
                 $base->contacts = [$user->id];
-                $base->save;
+                $base->save();
             }
-            return response()->json(['isContact' => $is_contact]);
+            return response()->json(['addContact' => $add_contact]);
         } else {
             return response()->json(['addContact' => false]);
         }
