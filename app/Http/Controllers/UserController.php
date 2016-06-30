@@ -1,8 +1,19 @@
 <?php
-
+/**
+ * In The Name Of God
+ *
+ * PHP Version 5
+ *
+ * @category HttpController
+ * @package  TMail\Http\Controllers
+ * @author   Parham Alvani <parham.alvani@gmail.com>
+ * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @link     Link
+ */
 namespace TMail\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 use TMail\Http\Requests;
 use TMail\User as User;
@@ -29,9 +40,9 @@ class UserController extends Controller
                     $is_contact = true;
                 }
             }
-            return json(['isContact' => $is_contact]);
+            return response()->json(['isContact' => $is_contact]);
         } else {
-            return json(['isContact' => false]);
+            return response()->json(['isContact' => false]);
         }
     }
 
@@ -51,9 +62,9 @@ class UserController extends Controller
                 $base->contacts = [$user->id];
                 $base->save;
             }
-            return json(['isContact' => $is_contact]);
+            return response()->json(['isContact' => $is_contact]);
         } else {
-            return json(['addContact' => false]);
+            return response()->json(['addContact' => false]);
         }
     }
 }
