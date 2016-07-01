@@ -22,6 +22,9 @@ var inbox = new Vue({
   },
   methods: {
     read: function (mail) {
+      if (mail.is_spam) {
+        alert('This is a spam')
+      }
       if (box.isInbox) {
         if (typeof mail.readed_at === 'undefined') {
           readMail(mail._id)
