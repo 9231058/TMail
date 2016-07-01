@@ -14,6 +14,7 @@ namespace TMail\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Notification;
 
 use TMail\Http\Requests;
 use TMail\User as User;
@@ -53,11 +54,20 @@ class UserController extends Controller
                 if (array_search($user->id, $base->contacts)) {
                     $add_contact = false;
                 } else {
-                    array_push($base->contacts, $user->id);
+                    $contacts = [];
+                    foreach ($base->contacts as $contact) {
+                        array_push($contacts, $contact);
+                    }
+                    array_push($contacts, $user->id);
+                    $base->contacts = $contacts;
+                    Notification::container("$base->id")
+                        ->info("$user->first_name is your friend :)");
                     $base->save();
                 }
             } else {
                 $base->contacts = [$user->id];
+                Notification::container("$base->id")
+                    ->info("$user->first_name is your friend :)");
                 $base->save();
             }
             return response()->json(['addContact' => $add_contact]);
