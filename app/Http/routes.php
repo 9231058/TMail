@@ -34,3 +34,5 @@ Route::post('user/contact/{user}', 'UserController@addContact');
 Route::post('mail/', 'MailController@store');
 Route::get('mail/inbox', 'MailController@inbox');
 Route::get('mail/sent', 'MailController@sent');
+Route::get('mail/read/{mail}', 'MailController@read');
+Route::delete('mail/{mail}', 'MailController@destroy');
