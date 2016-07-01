@@ -32,7 +32,7 @@ class MailController extends Controller
             return response()->json($mails);
         }
     }
-    
+
     public function fetch(int $offset, int $limit)
     {
         if (Auth::check()) {
@@ -56,7 +56,7 @@ class MailController extends Controller
                 'title' => $request['title'],
                 'author' => Auth::user()->email,
                 'recipient' => $request['recipient'],
-                'content' => $request['contetn']
+                'content' => $request['content']
             ]);
             $mail->save();
 
