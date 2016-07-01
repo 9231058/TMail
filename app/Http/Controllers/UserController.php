@@ -60,14 +60,10 @@ class UserController extends Controller
                     }
                     array_push($contacts, $user->id);
                     $base->contacts = $contacts;
-                    Notification::container("$base->id")
-                        ->info("$user->first_name is your friend :)");
                     $base->save();
                 }
             } else {
                 $base->contacts = [$user->id];
-                Notification::container("$base->id")
-                    ->info("$user->first_name is your friend :)");
                 $base->save();
             }
             return response()->json(['addContact' => $add_contact]);
