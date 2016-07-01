@@ -31,4 +31,5 @@ Route::get('user', 'UserController@index');
 Route::get('user/contact/{user}', 'UserController@isContact');
 Route::post('user/contact/{user}', 'UserController@addContact');
 
-Route::resource('mail', 'MailController');
+Route::post('mail/', 'MailController@store');
+Route::get('mail/{offset}/{limit}', 'MailController@fetch');
