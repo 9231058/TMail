@@ -82,7 +82,8 @@
                     <!-- Inbox pane -->
                     <div class="list-group">
                         <template v-for="mail in mails">
-                        <a href="#" data-toggle="modal" data-target="#mail-@{{mail._id}}" class="list-group-item">
+                        <a href="#" data-toggle="modal" data-target="#mail-@{{mail._id}}" v-on:click="read(mail)" class="list-group-item"
+                            v-bind:class="{'active': typeof mail.readed_at !== 'undefined'}">
                             <label>
                                 <input type="checkbox">
                             </label>
