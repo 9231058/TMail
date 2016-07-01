@@ -93,7 +93,8 @@
                 <div class="tab-pane fade in active" id="home">
                     <!-- Inbox pane -->
                     <div class="list-group">
-                        <a href="#" class="list-group-item" v-for="mail in mails">
+                        <template v-for="mail in mails">
+                        <a href="#" data-toggle="modal" data-target="#mail-@{{mail._id}}" class="list-group-item">
                             <label>
                                 <input type="checkbox">
                             </label>
@@ -104,6 +105,22 @@
                             <span class="badge">@{{mail.created_at}}</span>
                             <span class="pull-right"><span v-show="mail.hasAttachment" class="glyphicon glyphicon-paperclip"></span></span>
                         </a>
+                        <div class="modal fade" id="mail-@{{mail._id}}" tabindex="-1" role="dialog" aria-labelledby="compose-area">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="compose-area">@{{mail.title}}</h4><small>@{{mail.author}}</small>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div>@{{mail.content}}</div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </template>
                     </div>
                 </div>
             </div>
