@@ -98,7 +98,6 @@
                             <label>
                                 <input type="checkbox">
                             </label>
-                            <span class="glyphicon glyphicon-star-empty"></span>
                             <span class="name" style="min-width: 120px;display: inline-block;">@{{mail.author}}</span>
                             <span>@{{mail.title}}</span>
                             <span class="text-muted" style="font-size: 11px;">- @{{mail.head}}</span>
@@ -114,6 +113,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <div>@{{mail.content}}</div>
+                                    </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                     </div>
