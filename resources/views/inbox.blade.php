@@ -52,13 +52,13 @@
                     <li class="text-center"><small class="text-muted">Select messages to see more actions</small></li>
                 </ul>
             </div>
-            <div class="pull-right">
-                <span class="text-muted"><b>1</b>–<b>50</b></span>
+            <div class="pull-right" id="pagination">
+                <span class="text-muted"><b>@{{from}}</b>–<b>@{{to}}</b> of <b>@{{total}}</b></span>
                 <div class="btn-group btn-group-sm">
-                    <button type="button" class="btn btn-default" id="mail-left">
+                    <button type="button" class="btn btn-default" v-on:click="back">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </button>
-                    <button type="button" class="btn btn-default" id="mail-right">
+                    <button type="button" class="btn btn-default" v-on:click="next">
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </button>
                 </div>
