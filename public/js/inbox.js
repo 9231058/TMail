@@ -15,8 +15,6 @@ $.ajaxSetup({
   }
 })
 
-var fetchedMail = 0
-
 var inbox = new Vue({
   el: '#home',
   data: {
@@ -38,20 +36,51 @@ var compose = new Vue({
   }
 })
 
+var pagination = new Vue({
+  el: '#pagination',
+  data: {
+    from: 0,
+    to: 0,
+    total: 0,
+    nextUrl: null,
+    backUrl: null
+  },
+  methods: {
+    next: function () {
+      if (this.nextUrl != null) {
+        fetchMail(this.nextUrl)
+      }
+    },
+    back: function () {
+      if (this.backUrl != null) {
+        fetchMail(this.backUrl)
+      }
+    }
+  }
+})
+
 function onInboxLoad () {
   $('#compose-recipient').blur(checkMailExistance)
   $('#compose-send').click(sendMail)
   $('#compose-content').summernote();
-  fetchMail(0, 5)
+  fetchMail()
 }
 
-function fetchMail (offset, limit) {
+function fetchMail (url) {
+  if (typeof url === 'undefined') {
+    var url = '/TMail/mail'
+  }
   $.ajax({
     type: 'GET',
-    url: '/TMail/mail/' + offset + '/' + limit,
+    url: url,
     dataType: 'json',
-    success: function (mails) {
-      fetchedMail += limit
+    success: function (response) {
+      pagination.to = response.to
+      pagination.from = response.from
+      pagination.total = response.total
+      pagination.nextUrl = response.next_page_url
+      pagination.backUrl = response.perv_page_url
+      var mails = response.data
       inbox.mails = inbox.mails.concat(mails)
     }
   })
