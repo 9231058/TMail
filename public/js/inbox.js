@@ -32,7 +32,8 @@ var compose = new Vue({
       recipient: '',
       title: '',
       content: ''
-    }
+    },
+    attachments: []
   }
 })
 
@@ -96,6 +97,24 @@ function onInboxLoad () {
 }
 
 function encodeAttachment () {
+  var file = document.getElementById('compose-attachment').files[0]
+  var reader = new FileReader()
+
+  var attachment = {
+    name: file.name,
+    loading: true,
+    link: ''
+  }
+  compose.attachments.push(attachment)
+
+  reader.addEventListener('load', function () {
+    attachment.link = reader.result
+    attachment.loading = false
+  }, false)
+
+  if (file) {
+    reader.readAsDataURL(file)
+  }
 }
 
 function fetchMail (url) {
@@ -129,7 +148,8 @@ function sendMail () {
   var form = {
     'recipient': $('#compose-recipient').val(),
     'title': $('#compose-title').val(),
-    'content': $('#compose-content').summernote('code')
+    'content': $('#compose-content').summernote('code'),
+    'attachments': compose.attachments
   }
   $.ajax({
     type: 'POST',
@@ -141,6 +161,7 @@ function sendMail () {
       $('#compose-recipient').val('')
       $('#compose-title').val('')
       $('#compose-content').val('')
+      compose.attachments = []
       $('#compose').modal('hide')
     },
     error: function (msg) {
