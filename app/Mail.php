@@ -15,7 +15,9 @@ use Jenssegers\Mongodb\Eloquent\Model as Model;
  * @property string $author
  * @property string $recipient
  * @property string $title
+ * @property string $content
  * @property \Carbon\DateTime $read_at
+ * @property array $attachments
  *
  */
 
