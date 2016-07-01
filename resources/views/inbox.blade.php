@@ -112,7 +112,7 @@
                                         <h4 class="modal-title" id="compose-area">@{{mail.title}}</h4><small>@{{mail.author}}</small>
                                     </div>
                                     <div class="modal-body">
-                                        <div>@{{mail.content}}</div>
+                                        <div>@{{{mail.content}}}</div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -142,13 +142,13 @@
                         </ul>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="recipient" class="form-control" placeholder="Recipient" id="compose-recipient">
+                        <input type="text" class="form-control" placeholder="Recipient" id="compose-recipient">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="title" class="form-control" placeholder="Title" id="compose-title">
+                        <input type="text" class="form-control" placeholder="Title" id="compose-title">
                     </div>
                     <div class="form-group">
-                        <textarea name="content" class="form-control" rows="3" id="compose-content"></textarea>
+                        <div class="form-control" id="compose-content"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
