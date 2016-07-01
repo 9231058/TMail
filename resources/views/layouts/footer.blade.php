@@ -21,6 +21,9 @@
 <!-- Vue.js Thanks to Pooya -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
 
+<!-- summer node :) -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js"></script>
+
 <!-- TMail specific javascripts -->
 <!-- Pages specific javascripts -->
 @hasSection('js')

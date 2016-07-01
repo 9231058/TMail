@@ -13,6 +13,8 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/darkly/bootstrap.min.css" type="text/css">
 
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+
 </head>
 <body style="padding-bottom: 100px;">
 @if (Auth::check())
