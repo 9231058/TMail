@@ -34,7 +34,7 @@
     {!! Recaptcha::render() !!}
 </div>
 <div class="form-group">
-    <label for="image">Profile Picture</label>
+    <label for="avatar">Profile Picture</label>
     <input type="file" name="avatar">
     <p class="help-block">Please upload jpg file</p>
 </div>
