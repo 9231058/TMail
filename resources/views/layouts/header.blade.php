@@ -24,7 +24,7 @@
             <a class="navbar-brand">
                 <img src="{{Auth::user()->avatar}}" alt="Profile Picture" class="img-circle" height="40px" style="margin: -20% auto;">
             </a>
-            <a class="navbar-brand" href="{{url('users/'.Auth::user()->id)}}">
+            <a class="navbar-brand" href="{{url('user/'.Auth::user()->id)}}">
             {{Auth::user()->first_name}} {{Auth::user()->last_name}}
             </a>
         </div>
