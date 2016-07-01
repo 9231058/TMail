@@ -7,6 +7,5 @@ module.exports = {
   "env": {
     "browser": true,
     "jquery": true,
-    "vue": true
   }
 };
