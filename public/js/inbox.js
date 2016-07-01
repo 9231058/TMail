@@ -41,6 +41,7 @@ var compose = new Vue({
 function onInboxLoad () {
   $('#compose-recipient').blur(checkMailExistance)
   $('#compose-send').click(sendMail)
+  $('#compose-content').summernote();
   fetchMail(0, 5)
 }
 
@@ -63,7 +64,7 @@ function sendMail () {
   var form = {
     'recipient': $('#compose-recipient').val(),
     'title': $('#compose-title').val(),
-    'content': $('#compose-content').val()
+    'content': $('#compose-content').summernote('code')
   }
   $.ajax({
     type: 'POST',
