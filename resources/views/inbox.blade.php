@@ -138,6 +138,17 @@
                     <div class="form-group">
                         <div class="form-control" id="compose-content"></div>
                     </div>
+                    <div class="form-group">
+                        <a class="btn btn-info" v-for="attachment in attachments" v-bind:class="{'disabled': attachment.loading}"
+                            href="@{{attachment.link}}" role="button">
+                            @{{attachment.name}}
+                            <span v-if="attachment.loading" class="label label-default">Loading</span>
+                        </a>
+                    </div>
+                    <div class="form-group">
+                        <label for="attachment">Attachment</label>
+                        <input type="file" name="attachment" id="compose-attachment">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
