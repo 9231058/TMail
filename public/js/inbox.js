@@ -18,10 +18,18 @@ $.ajaxSetup({
 var inbox = new Vue({
   el: '#home',
   data: {
-    mails: [],
-    limit: 5,
-    offset: 0
+    mails: []
+  },
+  methods: {
+    read: function (mail) {
+      if (box.isInbox) {
+        if (typeof mail.readed_at === 'undefined') {
+          readMail(mail._id)
+        }
+      }
+    }
   }
+
 })
 
 var compose = new Vue({
@@ -115,6 +123,24 @@ function encodeAttachment () {
   if (file) {
     reader.readAsDataURL(file)
   }
+}
+
+function readMail (id) {
+  $.ajax({
+    type: 'GET',
+    url: '/TMail/mail/read/' + id,
+    dataType: 'json',
+    success: function (response) {
+      var i = inbox.mails.find(function (mail, index) {
+        if (mail._id === id) {
+          return index
+        }
+      })
+      console.log(i)
+      console.log(response)
+      inbox.mails.splice(i, 1, response)
+    }
+  })
 }
 
 function fetchMail (url) {
