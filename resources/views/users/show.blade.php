@@ -8,7 +8,6 @@
 @section('content')
     <script>
         var userId = '{{$user->id}}'
-        var userURL = '{{url('user')}}'
     </script>
     <div class="container">
     <div class="page-header row">
