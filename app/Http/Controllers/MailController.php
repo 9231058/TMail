@@ -20,25 +20,13 @@ use TMail\Mail as Mail;
 
 class MailController extends Controller
 {
-    public function show()
-    {
-    }
-
     public function index()
-    {
-        $mails = [];
-        if (Auth::check()) {
-        } else {
-            return response()->json($mails);
-        }
-    }
-
-    public function fetch(int $offset, int $limit)
     {
         if (Auth::check()) {
             $mails = Mail::where('recipient', Auth::user()->email)
                 ->orderBy('created_at', 'desc')
-                ->skip($offset)->take($limit)->get();
+                ->paginate(5);
+
             return response()->json($mails);
         }
     }
