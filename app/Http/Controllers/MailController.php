@@ -13,6 +13,7 @@
 namespace TMail\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Auth;
 
 use TMail\Http\Requests;
@@ -73,7 +74,9 @@ class MailController extends Controller
 
     public function read(Mail $mail)
     {
-        $mail->readed_at = Carbon\Carbon::now();
+        $mail->readed_at = Carbon::now();
         $mail->save();
+
+        return response()->json($mail);
     }
 }
