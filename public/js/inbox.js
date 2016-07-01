@@ -36,6 +36,34 @@ var compose = new Vue({
   }
 })
 
+var box = new Vue({
+  el: '#box',
+  data: {
+    isInbox: true,
+    isSent: false
+  },
+  methods: {
+    toInbox: function () {
+      if (!this.isInbox) {
+        fetchMail()
+        this.isInbox = true
+        this.isSent = false
+        $("#box-inbox").addClass("active");
+        $("#box-sent").removeClass("active");
+      }
+    },
+    toSent: function () {
+      if (!this.isSent) {
+        fetchMail()
+        this.isInbox = false
+        this.isSent = true
+        $("#box-inbox").removeClass("active");
+        $("#box-sent").addClass("active");
+      }
+    }
+  }
+})
+
 var pagination = new Vue({
   el: '#pagination',
   data: {
@@ -68,7 +96,12 @@ function onInboxLoad () {
 
 function fetchMail (url) {
   if (typeof url === 'undefined') {
-    var url = '/TMail/mail'
+    if (box.isInbox) {
+      var url = '/TMail/mail/inbox'
+    }
+    if (box.isSent) {
+      var url = '/TMail/mail/sent'
+    }
   }
   $.ajax({
     type: 'GET',
@@ -80,8 +113,7 @@ function fetchMail (url) {
       pagination.total = response.total
       pagination.nextUrl = response.next_page_url
       pagination.backUrl = response.perv_page_url
-      var mails = response.data
-      inbox.mails = inbox.mails.concat(mails)
+      inbox.mails = response.data
     }
   })
 }
