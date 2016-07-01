@@ -15,10 +15,14 @@ $.ajaxSetup({
   }
 })
 
+var fetchedMail = 0
+
 var inbox = new Vue({
   el: '#home',
   data: {
-    mails: []
+    mails: [],
+    limit: 5,
+    offset: 0
   }
 })
 
@@ -37,6 +41,19 @@ var compose = new Vue({
 function onInboxLoad () {
   $('#compose-recipient').blur(checkMailExistance)
   $('#compose-send').click(sendMail)
+  fetchMail(0, 5)
+}
+
+function fetchMail (offset, limit) {
+  $.ajax({
+    type: 'GET',
+    url: '/TMail/mail/' + offset + '/' + limit,
+    dataType: 'json',
+    success: function (mails) {
+      fetchedMail += limit
+      inbox.mails = inbox.mails.concat(mails)
+    }
+  })
 }
 
 function checkMailExistance () {
