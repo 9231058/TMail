@@ -12,18 +12,7 @@
         <h1>TMail <small>Simple way to destroy your mails :D</small></h1>
     </div>
     <div class="row">
-        <div class="col-md-2">
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    Mail <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Mail</a></li>
-                    <li><a href="#">Contacts</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-10">
+        <div class="col-md-10 col-md-offset-2">
             <!-- Split button -->
             <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -72,10 +61,9 @@
                 <i class="glyphicon glyphicon-edit"></i> Compose
             </button>
             <hr>
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#"><span class="badge pull-right">32</span> Inbox </a>
-                </li>
-                <li><a href="#">Sent Mail</a></li>
+            <ul id="box" class="nav nav-pills nav-stacked">
+                <li id="box-inbox" class="active"><a v-on:click="toInbox" href="#">Inbox</a></li>
+                <li id="box-sent"><a v-on:click="toSent" href="#">Sent Mail</a></li>
             </ul>
         </div>
         <div class="col-md-10">
