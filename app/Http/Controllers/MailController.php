@@ -32,6 +32,16 @@ class MailController extends Controller
             return response()->json($mails);
         }
     }
+    
+    public function fetch(int $offset, int $limit)
+    {
+        if (Auth::check()) {
+            $mails = Mail::where('recipient', Auth::user()->email)
+                ->orderBy('created_at', 'desc')
+                ->skip($offset)->take($limit)->get();
+            return response()->json($mails);
+        }
+    }
 
     public function store(Request $request)
     {
