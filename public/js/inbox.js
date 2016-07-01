@@ -45,18 +45,18 @@ var box = new Vue({
   methods: {
     toInbox: function () {
       if (!this.isInbox) {
-        fetchMail()
         this.isInbox = true
         this.isSent = false
+        fetchMail()
         $("#box-inbox").addClass("active");
         $("#box-sent").removeClass("active");
       }
     },
     toSent: function () {
       if (!this.isSent) {
-        fetchMail()
         this.isInbox = false
         this.isSent = true
+        fetchMail()
         $("#box-inbox").removeClass("active");
         $("#box-sent").addClass("active");
       }
