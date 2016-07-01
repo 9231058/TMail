@@ -18,7 +18,7 @@ function onUserShow () {
   })
 
   var xhr = new XMLHttpRequest()
-  xhr.open('GET', userURL + '/contact/' + userId, true)
+  xhr.open('GET', '/TMail/user/contact/' + userId, true)
   xhr.send()
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
@@ -42,7 +42,7 @@ function addContact () {
     }
   }
 
-  xhr.open('POST', 'TMail/contact/' + userId, true)
+  xhr.open('POST', '/TMail/user/contact/' + userId, true)
   xhr.setRequestHeader('X-CSRF-TOKEN', csrf)
   xhr.send('')
 }
