@@ -72,6 +72,10 @@ function sendMail () {
     dataType: 'json',
     success: function (msg) {
       compose.hasError = false
+      $('#compose-recipient').val('')
+      $('#compose-title').val('')
+      $('#compose-content').val('')
+      $('#compose').modal('hide')
     },
     error: function (msg) {
       compose.hasError = true
