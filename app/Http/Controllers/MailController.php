@@ -20,7 +20,7 @@ use TMail\Mail as Mail;
 
 class MailController extends Controller
 {
-    public function index()
+    public function inbox()
     {
         if (Auth::check()) {
             $mails = Mail::where('recipient', Auth::user()->email)
@@ -30,6 +30,18 @@ class MailController extends Controller
             return response()->json($mails);
         }
     }
+    
+    public function sent()
+    {
+        if (Auth::check()) {
+            $mails = Mail::where('author', Auth::user()->email)
+                ->orderBy('created_at', 'desc')
+                ->paginate(5);
+
+            return response()->json($mails);
+        }
+    }
+
 
     public function store(Request $request)
     {
