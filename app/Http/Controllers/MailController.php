@@ -30,7 +30,7 @@ class MailController extends Controller
             return response()->json($mails);
         }
     }
-    
+
     public function sent()
     {
         if (Auth::check()) {
@@ -50,6 +50,7 @@ class MailController extends Controller
                 'title' => 'required|max:255',
                 'recipient' => 'required|email|exists:users,email',
                 'content' => 'required',
+                'attachments' => 'array',
             ]);
 
             $mail = Mail::create([
@@ -58,6 +59,9 @@ class MailController extends Controller
                 'recipient' => $request['recipient'],
                 'content' => $request['content']
             ]);
+            if (isset($request['attachments'])) {
+                $mail['attachments'] = $request['attachments'];
+            }
             $mail->save();
 
             return response()->json($mail);
