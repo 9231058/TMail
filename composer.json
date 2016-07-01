@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
 	"laravelcollective/html": "~5.0",
 	"greggilbert/recaptcha": "dev-master",
-        "jenssegers/mongodb": "^3.0"
+        "jenssegers/mongodb": "^3.0",
+	"edvinaskrucas/notification": "5.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
