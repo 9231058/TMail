@@ -53,12 +53,12 @@
                 </ul>
             </div>
             <div class="pull-right">
-                <span class="text-muted"><b>1</b>–<b>50</b> of <b>160</b></span>
+                <span class="text-muted"><b>1</b>–<b>50</b></span>
                 <div class="btn-group btn-group-sm">
-                    <button type="button" class="btn btn-default">
+                    <button type="button" class="btn btn-default" id="mail-left">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </button>
-                    <button type="button" class="btn btn-default">
+                    <button type="button" class="btn btn-default" id="mail-right">
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </button>
                 </div>
