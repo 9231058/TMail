@@ -148,8 +148,10 @@ function sendMail () {
   var form = {
     'recipient': $('#compose-recipient').val(),
     'title': $('#compose-title').val(),
-    'content': $('#compose-content').summernote('code'),
-    'attachments': compose.attachments
+    'content': $('#compose-content').summernote('code')
+  }
+  if (compose.attachments.length > 0) {
+    form.attachments = compose.attachments
   }
   $.ajax({
     type: 'POST',
