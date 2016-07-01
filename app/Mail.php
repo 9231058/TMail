@@ -23,5 +23,5 @@ class Mail extends Model
 {
     protected $dates = ['read_at'];
 
-    protected $fillable = ['author', 'recipient', 'title'];
+    protected $fillable = ['author', 'recipient', 'title', 'content'];
 }
