@@ -161,6 +161,7 @@ return [
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         Jenssegers\Mongodb\MongodbServiceProvider::class,
         Jenssegers\Mongodb\Auth\PasswordResetServiceProvider::class,
+        Krucas\Notification\NotificationServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -218,6 +219,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
+        'Notification' => Krucas\Notification\Facades\Notification::class,
     ],
 
 ];

@@ -29,6 +29,7 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \TMail\Http\Middleware\VerifyCsrfToken::class,
+            \Krucas\Notification\Middleware\NotificationMiddleware::class,
         ],
 
         'api' => [
