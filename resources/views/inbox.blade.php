@@ -101,6 +101,12 @@
                                     </div>
                                     <div class="modal-body">
                                         <div>@{{{mail.content}}}</div>
+                                        <hr>
+                                        <div>
+                                            <a class="btn btn-info" v-for="attachment in mail.attachments" href="@{{attachment.link}}" role="button">
+                                                @{{attachment.name}}
+                                            </a>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
