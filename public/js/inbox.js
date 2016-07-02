@@ -15,6 +15,21 @@ $.ajaxSetup({
   }
 })
 
+var sort = new Vue({
+  el: '#sort',
+  data: {
+    sort: 'created_at',
+    name: 'By Created Time'
+  },
+  methods: {
+    toSort: function (sort, name) {
+      this.sort = sort
+      this.name = name
+      fetchMail()
+    }
+  }
+})
+
 var inbox = new Vue({
   el: '#home',
   data: {
@@ -150,10 +165,10 @@ function readMail (id) {
 function fetchMail (url) {
   if (typeof url !== 'string') {
     if (box.isInbox) {
-      url = '/TMail/mail/inbox'
+      url = '/TMail/mail/inbox/' + sort.sort
     }
     if (box.isSent) {
-      url = '/TMail/mail/sent'
+      url = '/TMail/mail/sent/' + sort.sort
     }
   }
   $.ajax({
