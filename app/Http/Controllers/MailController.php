@@ -26,19 +26,19 @@ class MailController extends Controller
         $this->middleware('auth');
     }
 
-    public function inbox()
+    public function inbox(string $by = 'created_at')
     {
         $mails = Mail::where('recipient', Auth::user()->email)
-            ->orderBy('created_at', 'desc')
+            ->orderBy($by, 'desc')
             ->paginate(5);
 
         return response()->json($mails);
     }
 
-    public function sent()
+    public function sent(string $by = 'created_at')
     {
         $mails = Mail::where('author', Auth::user()->email)
-            ->orderBy('created_at', 'desc')
+            ->orderBy($by, 'desc')
             ->paginate(5);
 
         return response()->json($mails);
