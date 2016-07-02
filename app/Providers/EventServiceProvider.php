@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'TMail\Events\SomeEvent' => [
-            'TMail\Listeners\EventListener',
+        'Illuminate\Auth\Events\Login' => [
+            'TMail\Listeners\LoginListener',
         ],
     ];
 

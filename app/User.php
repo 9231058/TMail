@@ -17,6 +17,7 @@ use Jenssegers\Mongodb\Eloquent\Model as Model;
  * @property integer $id
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $last_login
  *
  * @property string first_name
  * @property string last_name
@@ -50,6 +51,8 @@ class User extends Model implements
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $dates = ['last_login'];
 
     /**
      * The avatar attribute of user
