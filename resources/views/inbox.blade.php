@@ -89,9 +89,9 @@
                             </label>
                             <span class="name" style="min-width: 120px;display: inline-block;">@{{mail.author}}</span>
                             <span>@{{mail.title}}</span>
-                            <span class="text-muted" style="font-size: 11px;">- @{{mail.head}}</span>
+                            <span class="text-muted" style="font-size: 11px;">- @{{mail.content.substring(0, 10)}}</span>
                             <span class="badge">@{{mail.created_at}}</span>
-                            <span class="badge" v-show="mail.is_spam">SPAM</span>
+                            <span class="label label-warning" v-show="mail.is_spam">spam</span>
                             <span class="pull-right"><span v-show="typeof mail.attachments !== 'undefined'" class="glyphicon glyphicon-paperclip"></span></span>
                         </a>
                         <div class="modal fade" id="mail-@{{mail._id}}" tabindex="-1" role="dialog" aria-labelledby="compose-area">
