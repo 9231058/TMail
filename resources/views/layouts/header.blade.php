@@ -26,6 +26,7 @@
             </a>
             <a class="navbar-brand" href="{{url('user/'.Auth::user()->id)}}">
             {{Auth::user()->first_name}} {{Auth::user()->last_name}}
+            <small>Last Login: {{Auth::user()->last_login}}<small>
             </a>
         </div>
         <div class="collapse navbar-collapse">
