@@ -104,6 +104,7 @@ function onInboxLoad () {
   $('#compose-send').click(sendMail)
   $('#compose-content').summernote()
   $('#compose-attachment').change(encodeAttachment)
+  $('button[title=Refresh').click(fetchMail)
   fetchMail()
 }
 
@@ -147,7 +148,7 @@ function readMail (id) {
 }
 
 function fetchMail (url) {
-  if (typeof url === 'undefined') {
+  if (typeof url !== 'string') {
     if (box.isInbox) {
       url = '/TMail/mail/inbox'
     }
