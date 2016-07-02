@@ -13,32 +13,17 @@
     </div>
     <div class="row">
         <div class="col-md-10 col-md-offset-2">
-            <!-- Split button -->
-            <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">All</a></li>
-                    <li><a href="#">None</a></li>
-                    <li><a href="#">Read</a></li>
-                    <li><a href="#">Unread</a></li>
-                    <li><a href="#">Starred</a></li>
-                    <li><a href="#">Unstarred</a></li>
-                </ul>
-            </div>
             <button type="button" class="btn btn-default" data-toggle="tooltip" title="Refresh">
                 <span class="glyphicon glyphicon-refresh"></span>
             </button>
             <!-- Single button -->
-            <div class="btn-group">
+            <div class="btn-group" id="sort">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    More <span class="caret"></span>
+                    @{{name}} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Mark all as read</a></li>
-                    <li class="divider"></li>
-                    <li class="text-center"><small class="text-muted">Select messages to see more actions</small></li>
+                    <li><a href="#" v-on:click="toSort('created_at', 'By Created Time')">By Created Time</a></li>
+                    <li><a href="#" v-on:click="toSort('author', 'By Author')">By Author</a></li>
                 </ul>
             </div>
             <div class="pull-right" id="pagination">
