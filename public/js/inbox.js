@@ -164,7 +164,7 @@ function fetchMail (url) {
       pagination.from = response.from
       pagination.total = response.total
       pagination.nextUrl = response.next_page_url
-      pagination.backUrl = response.perv_page_url
+      pagination.backUrl = response.prev_page_url
       inbox.mails = response.data
     }
   })
