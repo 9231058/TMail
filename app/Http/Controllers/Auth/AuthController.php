@@ -71,20 +71,23 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        if (isset($data['avatar'])) {
-            $f = $data['avatar'];
-            $e = $f->getClientOriginalExtension();
-            $f->move(storage_path('app/public/avatars'), md5($data['email']).'.'.$e);
-            $avatar = asset('storage/avatars/'.md5($data['email']).'.'.$e);
-        }
-        return User::create(
+        $u = User::create(
             [
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'avatar' => $avatar,
             ]
         );
+
+        if (isset($data['avatar'])) {
+            $f = $data['avatar'];
+            $e = $f->getClientOriginalExtension();
+            $f->move(storage_path('app/public/avatars'), md5($data['email']).'.'.$e);
+            $avatar = asset('storage/avatars/'.md5($data['email']).'.'.$e);
+            $u->avatar = $avatar;
+        }
+
+        return $u;
     }
 }
